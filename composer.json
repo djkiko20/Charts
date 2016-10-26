@@ -1,11 +1,11 @@
 {
-    "name": "consoletvs/charts",
+    "name": "hilioski/charts",
     "description": "Create charts for laravel using diferent charts libraries",
     "license": "MIT",
     "authors": [
         {
-            "name": "Erik Campobadal",
-            "email": "soc@erik.cat"
+            "name": "Hristian Ilioski",
+            "email": "hristian.ilioski@gmail.com"
         }
     ],
     "require": {

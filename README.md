@@ -36,7 +36,7 @@ To install charts use composer
 ### Download
 
 ```
-composer require hilioski/color-charts
+composer require hilioski/charts
 ```
 
 ### Add service provider & alias
