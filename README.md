@@ -36,7 +36,7 @@ To install charts use composer
 ### Download
 
 ```
-composer require consoletvs/charts
+composer require hilioski/color-charts
 ```
 
 ### Add service provider & alias
