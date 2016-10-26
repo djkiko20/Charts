@@ -818,6 +818,21 @@ The function is ```sin(x)```, the interval is ```[0, 10]``` and the ```x``` ampl
 
   ![Example Bar](https://i.gyazo.com/94ada1aac091ef3cbc84433a3425a9aa.png)
 
+  ### ColorBar
+
+  ```php
+  Charts::create('colorbar', 'highcharts')
+  	->setTitle('My nice colorful chart')
+    ->setColors(['#e04f67', '#7cb5ec'])
+  	->setLabels(['First', 'Second'])
+  	->setValues([5,10])
+  	->setDimensions(200,200)
+  	->setResponsive(false);
+  ```
+
+  ![Example Bar](http://image.prntscr.com/image/fbd60629f8844178b4e25dd757cb5f73.png)
+
+
   ### Geo
 
   Note: The labels must have the country codes, not the name.
