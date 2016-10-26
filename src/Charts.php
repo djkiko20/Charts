@@ -172,3 +172,4 @@ class Charts extends Facade
         return implode("\n", array_values($includes));
     }
 }
+
