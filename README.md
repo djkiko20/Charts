@@ -820,6 +820,8 @@ The function is ```sin(x)```, the interval is ```[0, 10]``` and the ```x``` ampl
 
   ### ColorBar
 
+  Note: ```colorbar``` not include element label legend.
+
   ```php
   Charts::create('colorbar', 'highcharts')
   	->setTitle('My nice colorful chart')
