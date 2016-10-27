@@ -127,49 +127,28 @@ class Charts extends Facade
     }
 
     /**
-     * Return the library assets. Can set the type of assets in the second param for css and js.
+     * Return the library assets.
      *
-     * @param array  $libs
-     * @param string $type
-     *
-     * @return string
+     * @param array $libs
      */
-    public static function assets($libs = null, $type = null)
+    public static function assets($libs = null)
     {
         $includes = include __DIR__.'/includes.php';
-        if (!config('charts.load_jquery')) {
-            $includes['global'] = '';
-        }
 
         if ($libs && is_string($libs)) {
             $libs = explode(',', $libs);
         }
 
         if ($libs && is_array($libs)) {
-            if ($type) {
-                // return all assets of type in requested libs
-                return collect($libs)->reduce(function ($result, $lib) use ($type, $includes) {
-                    return (!empty($includes[$lib][$type]))
-                        ? $result."\n".implode("\n", $includes[$lib][$type])
-                        : $result;
-                });
+            $template = $includes['global'];
+            foreach ($libs as $lib) {
+                $template .= $includes[$lib]."\n";
             }
 
-            // return all libraries assets that match requested libraries
-            return collect($libs)->reduce(function ($result, $lib) use ($includes) {
-                return (!empty($includes[$lib]))
-                    ? $result."\n".implode("\n", array_flatten($includes[$lib]))
-                    : $result;
-            });
+            return $template;
         }
 
-        if ($type) {
-            // return all libraries that have requested asset types
-            return implode("\n", array_collapse(array_pluck($includes, $type)));
-        }
-
-        // return all libraries
-        return implode("\n", array_values($includes));
+        return implode("\n", $includes);
     }
 }
 

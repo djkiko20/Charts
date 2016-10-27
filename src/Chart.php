@@ -19,7 +19,6 @@ namespace ConsoleTVs\Charts;
 class Chart
 {
     public $id;
-    public $customId;
     public $type;
     public $library;
     public $title;
@@ -218,8 +217,7 @@ class Chart
      */
     public function render()
     {
-        $this->customId = func_num_args() > 0 ? func_get_arg(0) : false;
-        $this->id = $this->customId ? $this->customId : $this->randomString();
+        $this->id = $this->randomString();
         $file = $this->sufix ? __DIR__."/Templates/$this->library/$this->type.$this->sufix.php" : __DIR__."/Templates/$this->library/$this->type.php";
 
         if (file_exists($file)) {
@@ -249,3 +247,4 @@ class Chart
         return substr(str_shuffle(str_repeat($x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
     }
 }
+
