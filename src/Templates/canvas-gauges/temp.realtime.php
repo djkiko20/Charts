@@ -1,12 +1,7 @@
 <?php
 
-$graph = '';
-
-if (!$this->customId) {
-    include __DIR__.'/../_partials/canvas-container.php';
-}
-
-    $graph .= "
+$graph = "
+    <div><canvas id='$this->id'></canvas></div>
     <script type='text/javascript'>
         $(function (){
             var $this->id = new LinearGauge({

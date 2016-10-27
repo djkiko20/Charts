@@ -53,15 +53,12 @@ $graph = "
                     name: \"$this->element_label\",
                     data: ["; foreach ($this->values as $dta) {
                     $graph .= $dta.',';
-                } $graph .= ']
+                } $graph .= "]
                 }]
             });
         });
     </script>
-';
-
-if (!$this->customId) {
-    include __DIR__.'/../_partials/div-container.php';
-}
+    <div id='$this->id'></div>
+";
 
 return $graph;

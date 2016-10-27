@@ -1,12 +1,12 @@
 <?php
 
-$graph = '';
-
-if (!$this->customId) {
-    include __DIR__.'/../_partials/canvas2-container.php';
-}
-
-    $graph .= "
+$graph = "
+    <canvas id='$this->id' ";
+    if (!$this->responsive) {
+        $graph .= $this->height ? "height='$this->height' " : '';
+        $graph .= $this->width ? "width='$this->width' " : '';
+    }
+    $graph .= " ></canvas>
     <script>
         var ctx = document.getElementById('$this->id');
         var myChart = new Chart(ctx, {

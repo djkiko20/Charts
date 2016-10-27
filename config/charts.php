@@ -6,7 +6,6 @@ return [
     | Default settings for charts
     |--------------------------------------------------------------------------
     */
-
     'default'   => [
         'type'          => 'line',
         'library'       => 'google',
@@ -16,5 +15,4 @@ return [
         'width'         => 500,
         'responsive'    => true,
     ],
-
 ];

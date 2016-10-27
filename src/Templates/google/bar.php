@@ -49,10 +49,7 @@ $graph = "
         chart.draw(data, options);
       }
     </script>
+    <div id='$this->id'></div>
 ";
-
-if (!$this->customId) {
-    include __DIR__.'/../_partials/div-container.php';
-}
 
 return $graph;

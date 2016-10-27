@@ -47,16 +47,13 @@ $graph = "
                         $graph .= "{name: \"$e\", y: $v},";
                         $i++;
                     }
-                    $graph .= '
+                    $graph .= "
                     ]
                 }]
             });
         });
     </script>
-';
-
-if (!$this->customId) {
-    include __DIR__.'/../_partials/div-container.php';
-}
+    <div id='$this->id'></div>
+";
 
 return $graph;
